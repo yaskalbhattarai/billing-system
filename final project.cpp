@@ -21,7 +21,7 @@ protected:
 
 };
 
-class shopping : public Product {
+class shopping: public Product {
 private:
     float npr;
     float mNumber;
@@ -75,7 +75,7 @@ void shopping::menu() {
         }
 
         switch (choice) {
-            case 1:
+            Case 1:
                 cout << "\n\t\t\t Please Login \n";
                 cout << "\t\t\t Enter Email:   ";
                 cin >> email;
@@ -89,11 +89,11 @@ void shopping::menu() {
                 }
                 break;
 
-            case 2:
+            Case 2:
                 buyer();
                 break;
 
-            case 3:
+            Case 3:
                 continueMenu = false;
                 break;
 
@@ -133,28 +133,28 @@ void shopping::administrator()
 
         switch (choice)
         {
-        case 1:
+        Case 1:
             add();
             break;
 
-        case 2:
+        Case 2:
             edit();
             break;
 
-        case 3:
+        Case 3:
             rem();
             break;
 
-        case 4:
+        Case 4:
             membership();
             break;
 
-        case 5:
+        Case 5:
             dmembership();
             break;
 
 
-        case 7:
+        Case 7:
             return;
 
 
@@ -192,11 +192,11 @@ void shopping::buyer()
 
         switch (choice)
         {
-        case 1:
+        Case 1:
             receipt();
             break;
 
-        case 2:
+        Case 2:
             return;
 
         default:
@@ -396,7 +396,7 @@ void shopping::rem()
 	data.open("database.txt", ios::in);
 	if(!data)
 	{
-		cout<<"File doesnt exist";
+		cout<<"File doesn't exist";
 
 	}
 
@@ -420,7 +420,7 @@ void shopping::rem()
 		data.close();
 		data1.close();
 		remove("database.txt");
-		rename("database1.txt","database.txt");
+		rename("database1.txt", "database.txt");
 
 		if(token==0)
 		{
@@ -550,7 +550,7 @@ void shopping::receipt() {
         remove("database.txt");
         rename("temp.txt", "database.txt");
 
-        // Check membership for discount where all the task was done in bool membership function
+        // Check membership for discount where all the task was done in the bool membership function
         if (checkMembershipDiscount()) {
             total -= total * 0.1;
             cout << "\n\n----------------------------------------";
@@ -558,7 +558,7 @@ void shopping::receipt() {
             cout << "\nTotal Amount (After 10% Discount) : " << total;
         } else {
             cout << "\n\n----------------------------------------";
-            cout << "\n Membership does not found ,";
+            cout << "\n Membership does not found,";
             cout << "\nTotal Amount : " << total;
         }
     }
